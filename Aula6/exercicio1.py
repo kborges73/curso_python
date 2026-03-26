@@ -3,8 +3,7 @@ def imprimir_dicionario(dicionario: dict[str, float]):
         print(f'{key}: R${value:.2f}')
 
 #definição da estrutura de dados para armazenar os produtos e seus preços
-produto: dict[str, float]
-lista_produtos = produto = {}
+lista_produtos: dict[str, float] = {}
 
 #Preenchendo o dicionário com os produtos e seus preços
 lista_produtos['leite'] = 4.00

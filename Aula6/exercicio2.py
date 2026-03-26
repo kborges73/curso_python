@@ -1,8 +1,7 @@
 def verificar_cpfExiste(cpf: str) -> bool:
     return cpf in pessoas
 
-dados_pessoa= dict[str, str, int] #cpf da pessoa, nome e idade
-pessoas: dados_pessoa = {} #dicionário vazio para armazenar as pessoas e seus dados
+pessoas: dict[str, str, int] = {} #cpf da pessoa, nome e idade
 opcao = 0 #guarda a opção escolhida pelo usuário
 
 while (opcao != 7):
