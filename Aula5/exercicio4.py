@@ -13,4 +13,4 @@ cursos_ordenados = []
 for curso in cursos_tecnicos:
     cursos_ordenados.append(curso)
 cursos_ordenados.sort()
-print(cursos_ordenados)\\\\\\\\\\\
+print(cursos_ordenados)

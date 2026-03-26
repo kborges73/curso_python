@@ -12,40 +12,40 @@ def iniciar_jogo():
 
     # 2. Ciclo principal (Simulando um Do-While)
     while True:
-        try:
-            # Pedir o palpite ao jogador
-            entrada = input(f"Tentativa {len(palpites) + 1} - Qual é o seu palpite? ")
-            
-            # Validar se a entrada é numérica
-            if not entrada.isdigit():
-                print("⚠️ Por favor, digite um número inteiro válido.")
-                continue #volta para o início do loop para pedir um novo palpite
-            
-            palpite = int(entrada)
-            
-            # Guardar o palpite no histórico
-            palpites.append(palpite)
+        # Pedir o palpite ao jogador
+        entrada = int(input(f"Tentativa {len(palpites) + 1} - Qual é o seu palpite? "))
+        
+        # Validar se a entrada é numérica
+        if not isinstance(entrada, int):
+            print("⚠️ Por favor, digite um número inteiro válido.")
+            continue #volta para o início do loop para pedir um novo palpite
 
-            # 3. Lógica de Verificação
-            if palpite == numero_secreto:
-                print(f"\n🎉 PARABÉNS! Acertou no número {numero_secreto}!")
-                break # Sai do ciclo pois o jogo terminou
-            
-            elif palpite < numero_secreto:
-                print("🔼 Mais alto! Tente novamente.")
-            else:
-                print("🔽 Mais baixo! Tente novamente.")
+        #Validar se o número está dentro do intervalo permitido
+        if entrada<1 or entrada>100:
+            print("⚠️ O número deve ser entre 1 e 100. Tente novamente.")
+            continue #volta para o início do loop para pedir um novo palpite1
+        
+        palpite = int(entrada)
+        
+        # Guardar o palpite no histórico
+        palpites.append(palpite)
+
+        # 3. Lógica de Verificação
+        if palpite == numero_secreto:
+            print(f"\n🎉 PARABÉNS! Acertou no número {numero_secreto}!")
+            break # Sai do ciclo pois o jogo terminou
+        
+        elif palpite < numero_secreto:
+            print("🔼 Mais alto! Tente novamente.")
+        else:
+            print("🔽 Mais baixo! Tente novamente.")
                 
-        except KeyboardInterrupt:
-            print("\n\nJogo interrompido pelo utilizador. Até à próxima!")
-            return
 
     # 4. Exibição das Estatísticas Finais
-    print("\n" + "="*40)
     print("📊 RESUMO DA PARTIDA")
     print(f"Total de tentativas: {len(palpites)}")
     print(f"Números tentados: {palpites}")
-    print("="*40)
+
 
 if __name__ == "__main__":
     iniciar_jogo()
