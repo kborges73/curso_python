@@ -1,0 +1,10 @@
+# =============================================================================
+# Movie Tracker - Dependencias do Projeto
+# =============================================================================
+# Este arquivo lista todas as dependencias necessarias para executar o projeto.
+#
+# Instalacao:
+#     pip install -r requirements.txt
+#
+# =============================================================================
+
