@@ -27,7 +27,20 @@ class Serie(Video):
 
     def reproduzir(self):
         print(f"Reproduzindo a série '{self.titulo}'...")
+        for temporada in self.temporadas:
+            for capitulo in temporada.capitulos:
+                if not capitulo.visto:
+                    print(f"Reproduzindo o capítulo '{capitulo.titulo}' da temporada de {temporada.ano}...")
+                    capitulo.visto = True
         self.visto = True
+
+    def reproduzir_temporada(self, nro_temporada):
+        temporada = self.temporadas[nro_temporada-1]  # Ajuste para índice baseado em 0
+        print(f"Reproduzindo a temporada de {temporada.ano} da série '{self.titulo}'...")
+        for capitulo in temporada.capitulos:
+            if not capitulo.visto:
+                print(f"Reproduzindo o capítulo '{capitulo.titulo}' da temporada de {temporada.ano}...")
+                capitulo.visto = True
 
 #---------------Teste---------------
 if __name__ == "__main__":  
@@ -48,6 +61,7 @@ if __name__ == "__main__":
     temporada1.adicionar_capitulo(Capitulo("And the Bag's in the River", 3, datetime(2008, 2, 10)))
     temporada1.adicionar_capitulo(Capitulo("Cancer Man", 4, datetime(2008, 2, 17)))
     temporada1.adicionar_capitulo(Capitulo("Gray Matter", 5, datetime(2008, 2, 24)))
+    serie1.reproduzir_temporada(1);
     
     temporada2.adicionar_capitulo(Capitulo("Seven Thirty-Seven", 1, datetime(2009, 3, 8)))
     temporada2.adicionar_capitulo(Capitulo("Grilled", 2, datetime(2009, 3, 15)))
@@ -55,17 +69,9 @@ if __name__ == "__main__":
     temporada2.adicionar_capitulo(Capitulo("Down", 4, datetime(2009, 3, 29)))
     temporada2.adicionar_capitulo(Capitulo("Breakage", 5, datetime(2009, 4, 5)))
 
-    temporada1.capitulos[1].marcar_como_visto()
-    temporada1.capitulos[2].marcar_como_visto()
-    temporada1.capitulos[3].marcar_como_visto()
+    serie1.reproduzir()
 
     print(f"Série: {serie1.titulo}, Temporada 1 esta completa: {serie1.temporadas[0].verificar_estado()}")
-
-    temporada2.capitulos[0].marcar_como_visto()
-    temporada2.capitulos[1].marcar_como_visto()
-    temporada2.capitulos[2].marcar_como_visto()
-    temporada2.capitulos[3].marcar_como_visto()
-    temporada2.capitulos[4].marcar_como_visto()
 
     print(f"Série: {serie1.titulo}, Temporada 2 esta completa: {serie1.temporadas[1].verificar_estado()}")
 

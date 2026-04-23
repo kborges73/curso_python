@@ -19,8 +19,8 @@ class Temporada:
         else:
             for capitulo in self.capitulos:
                 if capitulo.visto:
-                    visto = True
+                    self.visto = True
                 else:
-                    visto = False
+                    self.visto = False
                 break       
-        return visto
+        return self.visto
