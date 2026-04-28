@@ -1,6 +1,5 @@
 from temporada import Temporada
 from generos_enum import Genero
-from dataclasses import dataclass, field
 from video import Video
 from capitulo import Capitulo
 from datetime import datetime

@@ -1,0 +1,13 @@
+from abc import ABC, abstractmethod
+
+class Midia(ABC):
+
+    def __init__(self, titulo, ano):
+        self.titulo = titulo
+        self.ano = ano
+
+    @abstractmethod
+    def reproduzir(self):
+        pass
+
+    
