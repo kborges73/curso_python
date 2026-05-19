@@ -13,3 +13,6 @@ class Capitulo:
             return True
         return False
     
+    def marcar_como_visto(self):
+        self.visto = True
+    

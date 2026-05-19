@@ -1,5 +1,5 @@
 from dataclasses import field
-from generos_enum import Genero
+from model.generos_enum import Genero
 from abc import ABC, abstractmethod
 
 class Video(ABC):

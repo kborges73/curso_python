@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 from dataclasses import field
 from operator import attrgetter
-from generos_enum import Genero
-from video import Video
+from model.generos_enum import Genero
+from model.video import Video
 
 class Filme(Video):
 

@@ -1,7 +1,7 @@
-from scripts.generos_enum import Genero
-from temporada import Temporada
-from capitulo import Capitulo
-from serie import Serie
+from model.generos_enum import Genero
+from model.temporada import Temporada
+from model.capitulo import Capitulo
+from model.serie import Serie
 from datetime import datetime
 
 if __name__ == "__main__":

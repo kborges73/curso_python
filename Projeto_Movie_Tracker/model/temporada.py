@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from capitulo import Capitulo
+from model.capitulo import Capitulo
 
 @dataclass
 class Temporada:

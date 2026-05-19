@@ -1,13 +1,27 @@
-from temporada import Temporada
-from generos_enum import Genero
-from video import Video
-from capitulo import Capitulo
+from model.temporada import Temporada
+from model.generos_enum import Genero
+from model.video import Video
+from model.capitulo import Capitulo
 from datetime import datetime
 
 class Serie(Video):
-    def __init__(self, titulo, imdb_rating=None):
+    def __init__(self, titulo, imdb_rating=None, generos=None, temporadas=None):
         super().__init__(titulo, imdb_rating)
         self.temporadas = []
+        # Inicializa gêneros se fornecidos
+        if generos:
+            for g in generos:
+                try:
+                    self.adicionar_genero(g)
+                except Exception:
+                    pass
+        # Inicializa temporadas se fornecidas
+        if temporadas:
+            for t in temporadas:
+                try:
+                    self.adicionar_temporada(t)
+                except Exception:
+                    pass
 
     def adicionar_temporada(self, temporada: Temporada):
         if temporada not in self.temporadas:
